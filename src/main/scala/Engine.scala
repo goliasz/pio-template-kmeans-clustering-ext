@@ -3,7 +3,7 @@ package org.template.clustering
 import io.prediction.controller.{Engine,EngineFactory}
 
 case class Query(
-  val id: String,
+  val id: String
 ) extends Serializable
 
 case class PredictedResult(

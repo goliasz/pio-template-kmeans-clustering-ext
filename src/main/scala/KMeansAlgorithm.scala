@@ -40,13 +40,13 @@ class KMeansAlgorithm(val ap: AlgorithmParams) extends P2LAlgorithm[PreparedData
         ap.initMode, 
         ap.seed
       ),
-      ids = data.points.map(x=>(x._1,x._2,x._3)).distinct.collect.toList() 
+      ids = data.points.map(x=>(x._1,x._2,x._3)).distinct.collect.toList 
     )
   }
 
   def predict(model: KMExtModel, query: Query): PredictedResult = {
-    val result = model.ids.filter(x=>{query.id==x._1}).map(x=>(model.kMeansModel.predict(Vectors.dense(Array(x._2,x._3))),x._2,x._3)).map(x=>{new ClusterResult(x._1,x._2,x._3)}).collect
+    val result = model.ids.filter(x=>{query.id==x._1}).map(x=>(model.kMeansModel.predict(Vectors.dense(Array(x._2,x._3))),x._2,x._3)).map(x=>{new ClusterResult(x._1,x._2,x._3)})
 
-    PredictedResult(clusters = result)
+    PredictedResult(clusters = result.toArray)
   }
 }

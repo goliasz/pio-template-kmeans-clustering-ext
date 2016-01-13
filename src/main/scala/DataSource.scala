@@ -28,7 +28,7 @@ class DataSource(val dsp: DataSourceParams)
 
 	  val pointsRDD: RDD[(String,Double,Double,DateTime)] = PEventStore.find(
       appName = dsp.appName,
-      entityType = "point",
+      entityType = Option("point"),
       startTime = aStartTime,
       eventNames = Some(List("$set")))(sc).map { event =>
         try {
