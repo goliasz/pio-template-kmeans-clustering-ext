@@ -41,11 +41,6 @@ class DataSource(val dsp: DataSourceParams)
         }
       }
 
-//			Vectors.dense(Array(
-//              properties.get[Double]("attr0"),
-//              properties.get[Double]("attr1")
-//        ))
-
     new TrainingData(pointsRDD)
   }
 }

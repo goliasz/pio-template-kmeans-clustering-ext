@@ -14,7 +14,9 @@ class Preparator
   extends PPreparator[TrainingData, PreparedData] {
 
   def prepare(sc: SparkContext, trainingData: TrainingData): PreparedData = {
-    new PreparedData(points = trainingData.points)
+    //Take only events with max event time
+    val gr = trainingData.points.map(x=>((x._1,x._2,x._3),x._4)).groupByKey.map(x=>(x._1, x._2.map(_.getMillis).max)).map(x=>(x._1._1,x._1._2,x._1._3,new DateTime(x._2)))
+    new PreparedData(points = gr)
   }
 }
 

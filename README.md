@@ -13,7 +13,7 @@ docker run --hostname pio1 --privileged=true --name pio1 -it -p 8000:8000 -p 707
 
 root@pio1:/# pio-start-all<br>
 root@pio1:/# cd MyEngine<br>
-root@pio1:/MyEngine# pio template get goliasz/pio-template-kmeans-clustering-ext --version "0.1" geoclus1<br>
+root@pio1:/MyEngine# pio template get goliasz/pio-template-kmeans-clustering-ext --version "0.3" geoclus1<br>
 root@pio1:/MyEngine# cd geoclus1
 root@pio1:/MyEngine/geoclus1# vi engine.json<br>
 Set application name to “geoclus1”<br>

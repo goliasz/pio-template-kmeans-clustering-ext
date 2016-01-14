@@ -16,7 +16,8 @@
         "numberOfIterations" : 100,
         "numberOfRuns" : 1,
         "initMode" : "k-means||",
-        "seed" : 75
+        "seed" : 75,
+        "onlyLastHit" : false
       }
     }
   ]
