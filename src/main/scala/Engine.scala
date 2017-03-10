@@ -1,6 +1,6 @@
 package org.template.clustering
 
-import io.prediction.controller.{Engine,EngineFactory}
+import org.apache.predictionio.controller.{Engine,EngineFactory}
 import org.joda.time.DateTime
 
 case class Query(
